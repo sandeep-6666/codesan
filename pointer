@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 10; 
+    int* ptr = &num; 
+
+   
+    cout << "Value of num: " << num << endl;
+
+  
+    cout << "Value of num (using pointer): " << *ptr << endl;
+
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5}; 
+    int* ptr = arr; 
+
+    for (int i = 0; i < 5; ++i) {
+        cout << "Element " << i << ": " << *(ptr + i) << endl;
+    }
+
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 42;      
+    int* ptr1 = &num;  
+    int** ptr2 = &ptr1; 
+
+  
+    cout << "Value of num: " << num << endl;
+    cout << "Value of num (using pointer): " << *ptr1 << endl;
+    cout << "Value of num (using pointer to pointer): " << **ptr2 << endl;
+
+    return 0;
+}
