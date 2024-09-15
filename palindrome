@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+int findMax(const int arr[], int size) {
+    int maxVal = arr[0]; 
+
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i]; 
+        }
+    }
+
+    return maxVal;
+}
+
+int main() {
+    int arr1[] = {1, 5, 3, 9, 2};
+    int size1 = sizeof(arr1) / sizeof(arr1[0]);
+
+    int arr2[] = {-10, -3, -22, -1, -7};
+    int size2 = sizeof(arr2) / sizeof(arr2[0]);
+
+
+    cout << "Max in arr1: " << findMax(arr1, size1) << endl;
+    cout << "Max in arr2: " << findMax(arr2, size2) << endl;
+
+    return 0;
+}
+#include <iostream>
+#include <string>
+#include <cctype> 
+using namespace std;
+
+bool isPalindrome(const string &str) {
+    int left = 0, right = str.length() - 1;
+
+    while (left < right) {
+       
+        while (left < right && !isalnum(str[left])) {
+            ++left;
+        }
+
+     
+        while (left < right && !isalnum(str[right])) {
+            --right;
+        }
+
+     
+        if (tolower(str[left]) != tolower(str[right])) {
+            return false; // Not a palindrome
+        }
+
+        ++left;
+        --right;
+    }
+
+    return true; 
+}
+
+int main() {
+    string str1 = "A man, a plan, a canal, Panama";
+    string str2 = "racecar";
+    string str3 = "Hello, World!";
+
+    cout << "\"" << str1 << "\" is palindrome: " << (isPalindrome(str1) ? "true" : "false") << endl;
+    cout << "\"" << str2 << "\" is palindrome: " << (isPalindrome(str2) ? "true" : "false") << endl;
+    cout << "\"" << str3 << "\" is palindrome: " << (isPalindrome(str3) ? "true" : "false") << endl;
+
+    return 0;
+}
